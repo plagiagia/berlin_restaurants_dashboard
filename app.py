@@ -8,10 +8,10 @@ import plotly.express as px
 from dash.dependencies import Input, Output
 
 # Load data
-data = pd.read_csv('./restaurants_df.csv')
+data = pd.read_csv('restaurants_df.csv')
 
 # Make the app
-app = dash.Dash(external_stylesheets=['/assets/style.css'])
+app = dash.Dash(external_stylesheets=['assets/style.css'])
 server = app.server
 default_table = data.sample(10).to_dict('records')
 
