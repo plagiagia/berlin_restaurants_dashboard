@@ -1,9 +1,9 @@
 # Imports
-import pandas as pd
 import dash
+import dash_core_components as dcc
 import dash_html_components as html
 import dash_table
-import dash_core_components as dcc
+import pandas as pd
 import plotly.express as px
 from dash.dependencies import Input, Output
 
@@ -11,10 +11,9 @@ from dash.dependencies import Input, Output
 data = pd.read_csv('restaurants_df.csv')
 
 # Make the app
-app = dash.Dash(external_stylesheets=['app/assets/style.css'])
+app = dash.Dash(name='Restaurants_Dashboard', external_stylesheets=['/assets/style.css'])
 server = app.server
 default_table = data.sample(10).to_dict('records')
-
 
 # Build the layout
 app.layout = html.Div([
